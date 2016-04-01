@@ -1,8 +1,8 @@
-sa-dev-phpstorm
+sa-dev-dbgui
 ===============
 
-[![Build Status](https://travis-ci.org/softasap/sa-dev-phpstorm.svg?branch=master)](https://travis-ci.org/softasap/sa-dev-phpstorm)
+[![Build Status](https://travis-ci.org/softasap/sa-dev-dbgui.svg?branch=master)](https://travis-ci.org/softasap/sa-dev-dbgui)
 
-Installs Jetbrains phpstorm
+Installs popular db tools dbeawer and robomongo
 
 
