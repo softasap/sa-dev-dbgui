@@ -4,7 +4,7 @@
 option_dbeawer: true
 option_robomongo: true
 
-dbeawer_version: 3.4.5
+dbeawer_version: 3.6.3
 robomongo_version: 0.8.5
 
 root_dir: "{{role_path}}"
