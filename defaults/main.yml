@@ -1,0 +1,9 @@
+---
+# defaults file for sa-dev-dbgui
+
+option_dbeawer: true
+option_robomongo: true
+
+dbeawer_version: 3.4.5
+robomongo_version: 0.8.5
+

@@ -1,0 +1,7 @@
+---
+# tasks file for sa-dev-dbgui
+  - include: tasks_dbeawer.yml
+    when: option_dbeawer
+
+  - include: tasks_robomongo.yml
+    when: option_robomongo
