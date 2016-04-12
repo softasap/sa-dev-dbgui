@@ -1,7 +1,7 @@
 - name: Robomongo | Check if my_package is installed
   command: dpkg-query -W robomongo
   register: robomongo_check_deb
-  sudo: yes
+  become: yes
   failed_when: robomongo_check_deb.rc > 1
   changed_when: robomongo_check_deb.rc == 1
   tags:
@@ -20,7 +20,7 @@
 
 - name: Robomongo | install package
   apt: deb="/home/{{ deploy_user }}/Downloads/robomongo.deb"
-  sudo: true
+  become: true
   when: robomongo_check_deb.rc == 1
   tags:
     -worktools
