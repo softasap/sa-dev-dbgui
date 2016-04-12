@@ -11,7 +11,7 @@
 
 - name: Robomongo | download package
   get_url: 
-    url="http://robomongo.org/files/linux/robomongo-{{ robomongo_version }}-x86_64.deb"
+    url="https://download.robomongo.org/{{ robomongo_version }}/linux/robomongo-{{ robomongo_version }}-x86_64.deb"
     dest="/home/{{ deploy_user }}/Downloads/robomongo.deb"
   when: robomongo_check_deb.rc == 1
   tags:
