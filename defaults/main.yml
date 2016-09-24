@@ -4,10 +4,9 @@
 option_dbeawer: true
 option_robomongo: true
 
-dbeawer_version: 3.6.3
+dbeawer_version: latest
 robomongo_version: 0.8.5
 
 root_dir: "{{role_path}}"
 deploy_user: "{{ansible_user_id}}"
 apps_dir: "/home/{{ansible_user_id}}/apps"
-

@@ -8,15 +8,25 @@
     -worktools
     -dbeawer
 
-
 - name: DBeawer | download package
-  get_url: 
-    url="http://dbeaver.jkiss.org/files/3.6.3/dbeaver-ce_{{ dbeawer_version }}_amd64.deb"
+  get_url:
+    url="http://dbeaver.jkiss.org/files/dbeaver-ce_latest_amd64.deb"
     dest="/home/{{ deploy_user }}/Downloads/dbeawer.deb"
-  when: dbeawer_check_deb.rc == 1
+  when: dbeawer_check_deb.rc == 1 and (dbeawer_version == "latest")
   tags:
     -worktools
-    -dbeawer  
+    -dbeawer
+
+
+- name: DBeawer | download package
+  get_url:
+    url="http://dbeaver.jkiss.org/files/{{ dbeawer_version }}/dbeaver-ce_{{ dbeawer_version }}_amd64.deb"
+    dest="/home/{{ deploy_user }}/Downloads/dbeawer.deb"
+  when: dbeawer_check_deb.rc == 1 and not (dbeawer_version == "latest")
+  tags:
+    -worktools
+    -dbeawer
+
 
 - name: DBeawer | install package
   apt: deb="/home/{{ deploy_user }}/Downloads/dbeawer.deb"
@@ -24,7 +34,4 @@
   when: dbeawer_check_deb.rc == 1
   tags:
     -worktools
-    -dbeawer  
-
-
-
+    -dbeawer
