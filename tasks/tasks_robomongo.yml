@@ -10,18 +10,18 @@
 
 
 - name: Robomongo | download package
-  get_url: 
+  get_url:
     url="https://download.robomongo.org/{{ robomongo_version }}/linux/robomongo-{{ robomongo_version }}-x86_64.deb"
-    dest="/home/{{ deploy_user }}/Downloads/robomongo.deb"
+    dest="/tmp/robomongo.deb"
   when: robomongo_check_deb.rc == 1
   tags:
     -worktools
-    -robomongo  
+    -robomongo
 
 - name: Robomongo | install package
-  apt: deb="/home/{{ deploy_user }}/Downloads/robomongo.deb"
+  apt: deb="/tmp/robomongo.deb"
   become: true
   when: robomongo_check_deb.rc == 1
   tags:
     -worktools
-    -robomongo  
+    -robomongo
